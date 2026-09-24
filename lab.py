@@ -433,9 +433,6 @@ def cigar_party(cigars, is_weekend):
     if is_weekend == True and cigars >= 40:
         return True
 
-print(cigar_party(30, False))
-print(cigar_party(50, False))
-print(cigar_party(80, True))
 
 
 
