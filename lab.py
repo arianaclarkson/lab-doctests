@@ -121,15 +121,15 @@ print(max_num(8,20))
 
 
 def max_num_4(a, b, c, d):
-    for num in (a,b, c, d):
-            if a>b and a>c and a>d:
-                return a
-            if b>a and b>c and b>d:
-                return b
-            if c>a and c>b and c>d:
-                return c
-            if d>a and d>b and d>c:
-                return d
+    biggest = a
+
+    if b > biggest:
+        biggest = b
+    if c > biggest:
+        biggest = c
+    if d > biggest:
+        biggest = d
+    return biggest
 print(max_num_4(1,3,6,14))
 
 '''
@@ -152,12 +152,11 @@ print(max_num_4(1,3,6,14))
 
 
 def max_num_abs(a, b):
-    for num in (a,b):
-            if a>b:
-                return abs(a)
-            else:
-                return abs(b)
-print(max_num(8,-20))
+    if abs(a) > abs(b):
+        return a
+    else:
+        return b
+print(max_num_abs(8,-20))
 
 '''
     Return the number with the highest absolute value.
@@ -428,12 +427,12 @@ print(fibonacci(24))
 
 
 def cigar_party(cigars, is_weekend):
-    if is_weekend == False and cigars<60 and cigars>40:
+    if is_weekend == False and cigars >= 40 and cigars <= 60:
         return True
-    if is_weekend == True and cigars>40:
+
+    if is_weekend == True and cigars >= 40:
         return True
-    else:
-        return False
+
 print(cigar_party(30, False))
 print(cigar_party(50, False))
 print(cigar_party(80, True))
